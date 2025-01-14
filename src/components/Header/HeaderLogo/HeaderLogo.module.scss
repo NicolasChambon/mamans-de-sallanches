@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.headerLogo {
+  align-items: center;
+  color: $primaryColor;
+  display: flex;
+  font-family: $logoFont;
+  font-size: 1.5rem;
+  font-weight: 700;
+  gap: 1rem;
+
+  &_img {
+    height: 3rem;
+    width: 3rem;
+  }
+}
