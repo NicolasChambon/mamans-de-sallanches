@@ -1,9 +1,25 @@
+import HeaderLogo from './HeaderLogo/HeaderLogo';
+import HeaderNav from './HeaderNav/HeaderNav';
+import HeaderLang from './HeaderLang/HeaderLang';
+import MenuBtn from './MenuBtn/MenuBtn';
+
 import styles from './Header.module.scss';
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      <h1>My App</h1>
+      <div className={styles.header_container}>
+        <HeaderLogo />
+
+        {/* Disappears below 600px */}
+        <HeaderNav />
+        <HeaderLang />
+
+        {/* Appears below 600px */}
+        <MenuBtn />
+
+        {/* {<HeaderMenu />} */}
+      </div>
     </header>
   );
 };
