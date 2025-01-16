@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+.HeaderLang {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 639px) {
+    display: none;
+  }
+
+  &_btn {
+    background-color: transparent;
+    border: none;
+    color: $secondaryColorDark1;
+    display: flex;
+    justify-content: center;
+    width: 20%;
+
+    transition: text-shadow 0.3s;
+    &:hover {
+      text-shadow: 0 0 5px $primaryColor;
+    }
+
+    &.en {
+      border-top: 1px solid $secondaryColorDark1;
+      padding-top: 0.2rem;
+    }
+    &.fr {
+      border-bottom: 1px solid $secondaryColorDark1;
+    }
+    &.active {
+      font-weight: 800;
+    }
+  }
+}

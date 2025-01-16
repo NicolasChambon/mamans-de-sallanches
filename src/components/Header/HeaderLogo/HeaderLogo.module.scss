@@ -13,4 +13,11 @@
     height: 3rem;
     width: 3rem;
   }
+
+  &_text {
+    width: 7rem;
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
 }

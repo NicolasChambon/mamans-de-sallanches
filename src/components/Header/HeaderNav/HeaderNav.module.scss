@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+.HeaderNav {
+  margin-right: 1rem;
+  width: 75%;
+
+  @media (max-width: 639px) {
+    display: none;
+  }
+
+  &_list {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    list-style: none;
+
+    &_item {
+      &_link {
+        color: $primaryColor;
+        font-weight: 500;
+        padding: 1rem 0;
+
+        position: relative;
+        &::after {
+          background-color: $secondaryColorLight2;
+          content: '';
+          height: 3px;
+          left: -5%;
+          position: absolute;
+          bottom: -12%;
+          transition: width 0.3s;
+          width: 0;
+        }
+        &:hover::after {
+          width: 110%;
+        }
+        &.active::after {
+          width: 110%;
+          background-color: $secondaryColor;
+        }
+      }
+    }
+  }
+}
