@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+.HeaderNavItem {
+  &_link {
+    color: $primaryColor;
+    font-weight: 500;
+    padding: 1rem 0;
+
+    position: relative;
+    &::after {
+      background-color: $secondaryColorLight2;
+      content: '';
+      height: 3px;
+      left: -5%;
+      position: absolute;
+      bottom: -12%;
+      transition: width 0.3s;
+      width: 0;
+    }
+    &:hover::after {
+      width: 110%;
+    }
+    &.active::after {
+      width: 110%;
+      background-color: $secondaryColor;
+    }
+  }
+}

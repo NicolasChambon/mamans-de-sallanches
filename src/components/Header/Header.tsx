@@ -11,11 +11,11 @@ const Header = () => {
       <div className={styles.header_container}>
         <HeaderLogo />
 
-        {/* Disappears below 640px TODO*/}
+        {/* Disappears below 640px */}
         <HeaderNav />
         <HeaderLang />
 
-        {/* Appears below 600px TODO*/}
+        {/* Appears below 640px */}
         <MenuBtn />
 
         {/* {<HeaderMenu />} */}
