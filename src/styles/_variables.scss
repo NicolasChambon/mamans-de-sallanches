@@ -1,9 +1,9 @@
+// Fonts
 $mainFont: var(--font-inter);
 $titleFont: var(--font-poppins);
 $logoFont: var(--font-dancing-script);
 
-// Tints and shades defined using color-hex.com
-
+// Tints and shades (defined using color-hex.com)
 $primaryColor: #f13c20;
 $primaryColorLight1: #f3624c;
 $primaryColorLight2: #f68a79;
@@ -25,3 +25,6 @@ $thirdColorLight2: #e7c17a;
 $thirdColorLight3: #efd6a6;
 $thirdColorBackground: #fbf4e8;
 $thirdColorDark1: #ac7a1b;
+
+// Radius
+$borderRadius: 0.25rem;

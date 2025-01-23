@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.HeaderMenu {
+  background-color: $primaryColorBackground;
+  border: $primaryColorLight4 1px solid;
+  border-radius: $borderRadius;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: absolute;
+  right: 0.5rem;
+  top: 4.25rem;
+}

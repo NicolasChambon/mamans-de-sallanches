@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.HeaderMenuNav {
+  &_list {
+    display: flex;
+    flex-direction: column;
+  }
+}

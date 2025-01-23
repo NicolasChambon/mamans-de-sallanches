@@ -16,7 +16,7 @@
 
   &_text {
     width: 7rem;
-    @media (max-width: 800px) {
+    @media (min-width: 640px) and (max-width: 800px) {
       display: none;
     }
   }
