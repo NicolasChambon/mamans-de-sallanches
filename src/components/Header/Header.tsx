@@ -1,8 +1,8 @@
 import HeaderLogo from './HeaderLogo/HeaderLogo';
 import HeaderNav from './HeaderNav/HeaderNav';
-import HeaderLang from './HeaderLang/HeaderLang';
-import MenuBtn from './MenuBtn/MenuBtn';
-import HeaderMenu from './HeaderMenu/HeaderMenu';
+import LangSwitcher from './LangSwitcher/LangSwitcher';
+import NarrowMenuBtn from './NarrowMenuBtn/NarrowMenuBtn';
+import NarrowMenu from './NarrowMenu/NarrowMenu';
 
 import styles from './Header.module.scss';
 
@@ -14,12 +14,12 @@ const Header = () => {
 
         {/* Disappears below 640px */}
         <HeaderNav />
-        <HeaderLang />
+        <LangSwitcher />
 
         {/* Appears below 640px */}
-        <MenuBtn />
+        <NarrowMenuBtn />
 
-        <HeaderMenu />
+        <NarrowMenu />
       </div>
     </header>
   );

@@ -7,13 +7,13 @@ import styles from './HeaderLogo.module.scss';
 
 const HeaderLogo = () => {
   return (
-    <Link className={styles.headerLogo} href="/">
+    <Link className={styles.HeaderLogo} href="/">
       <Image
-        className={styles.headerLogo_img}
+        className={styles.HeaderLogo_img}
         src={MainLogo}
         alt="Logo Mamans de Sallanches"
       />
-      <p className={styles.headerLogo_text}>Mamans de Sallanches</p>
+      <p className={styles.HeaderLogo_text}>Mamans de Sallanches</p>
     </Link>
   );
 };
