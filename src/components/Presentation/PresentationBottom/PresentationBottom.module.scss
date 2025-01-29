@@ -2,11 +2,35 @@
 
 .PresentationBottom {
   align-items: center;
+  background: $thirdColor;
+  border: $thirdColorDark1 1px solid;
+  border-radius: 10px;
   display: flex;
-  gap: 2rem;
+  position: relative;
 
-  @media (max-width: 755px) {
-    align-items: center;
-    flex-direction: column;
+  &_img {
+    border-radius: 10px;
+    position: absolute;
+    right: 1rem;
+    top: -10rem;
+
+    @media (max-width: 840px) {
+      top: -5rem;
+    }
+
+    @media (max-width: 665px) {
+      right: 50%;
+      transform: translateX(50%);
+
+      top: -2rem;
+    }
+  }
+
+  &_text {
+    padding: 2rem 22rem 2rem 2rem;
+
+    @media (max-width: 665px) {
+      padding: 23rem 2rem 2rem 2rem;
+    }
   }
 }

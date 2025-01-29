@@ -1,22 +1,33 @@
 @use 'variables' as *;
 
 .PresentationTop {
+  background-color: $secondaryColor;
+  border: $secondaryColorDark1 1px solid;
+  border-radius: 10px;
+  color: $secondaryColorBackground;
   display: flex;
+  position: relative;
 
-  @media (max-width: 755px) {
-    align-items: center;
-    flex-direction: column;
+  &_img {
+    border-radius: 10px;
+    position: absolute;
+    left: 1rem;
+    top: -2rem;
+
+    @media (max-width: 665px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &_text {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 2rem;
+    gap: 1rem;
+    padding: 2rem 2rem 2rem 22rem;
 
-    @media (max-width: 755px) {
-      border-bottom: 1px solid $primaryColorLight4;
-      gap: 2rem;
+    @media (max-width: 665px) {
+      padding: 17rem 2rem 2rem 2rem;
     }
 
     & span {
@@ -25,7 +36,7 @@
 
     &_citation {
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-style: italic;
     }
   }
