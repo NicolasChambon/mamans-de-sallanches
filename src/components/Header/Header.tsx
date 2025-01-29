@@ -1,8 +1,7 @@
 import HeaderLogo from './HeaderLogo/HeaderLogo';
 import HeaderNav from './HeaderNav/HeaderNav';
 import LangSwitcher from './LangSwitcher/LangSwitcher';
-import NarrowMenuBtn from './NarrowMenuBtn/NarrowMenuBtn';
-import NarrowMenu from './NarrowMenu/NarrowMenu';
+import NarrowMenuClient from './NarrowMenuClient/NarrowMenuClient';
 
 import styles from './Header.module.scss';
 
@@ -16,10 +15,8 @@ const Header = () => {
         <HeaderNav />
         <LangSwitcher />
 
-        {/* Appears below 640px */}
-        <NarrowMenuBtn />
-
-        <NarrowMenu />
+        {/* Client side interactions for the narrow menu */}
+        <NarrowMenuClient />
       </div>
     </header>
   );

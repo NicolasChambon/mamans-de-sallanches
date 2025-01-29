@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+// Types
+import { Dispatch, SetStateAction } from 'react';
 
 // Icons
 import { IoMenu } from 'react-icons/io5';
@@ -8,9 +9,12 @@ import { RxCross2 } from 'react-icons/rx';
 
 import styles from './NarrowMenuBtn.module.scss';
 
-const NarrowMenuBtn = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+interface NarrowMenuBtnProps {
+  isMenuOpen: boolean;
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+}
 
+const NarrowMenuBtn = ({ isMenuOpen, setIsMenuOpen }: NarrowMenuBtnProps) => {
   return (
     <button
       className={styles.NarrowMenuBtn}

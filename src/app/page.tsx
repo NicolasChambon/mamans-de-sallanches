@@ -1,5 +1,11 @@
-import styles from './page.module.scss';
+import Presentation from '@/components/Presentation/Presentation';
 
 export default function Home() {
-  return <div className={styles.page}></div>;
+  return (
+    // <main>
+    <>
+      <Presentation />
+    </>
+    // </main>
+  );
 }

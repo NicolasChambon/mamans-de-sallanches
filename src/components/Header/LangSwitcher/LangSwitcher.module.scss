@@ -22,11 +22,13 @@
       text-shadow: 0 0 5px $primaryColor;
     }
 
-    &.en {
-      border-top: 1px solid $secondaryColorDark1;
-    }
     &.fr {
       border-bottom: 1px solid $secondaryColorDark1;
+      padding-bottom: 0.2rem;
+    }
+    &.en {
+      border-top: 1px solid $secondaryColorDark1;
+      padding-top: 0.1rem;
     }
     &.active {
       font-weight: 800;

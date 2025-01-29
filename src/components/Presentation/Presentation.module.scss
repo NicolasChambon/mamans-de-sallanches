@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.Presentation {
+  border-bottom: 1px solid $primaryColorLight4;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 4rem);
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 1350px;
+  overflow: hidden;
+  padding: 2rem 0;
+}
