@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.PresentationBottom {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 755px) {
+    align-items: center;
+    flex-direction: column;
+  }
+}

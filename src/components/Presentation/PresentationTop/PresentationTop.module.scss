@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+.PresentationTop {
+  display: flex;
+
+  @media (max-width: 755px) {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem;
+
+    @media (max-width: 755px) {
+      border-bottom: 1px solid $primaryColorLight4;
+      gap: 2rem;
+    }
+
+    & span {
+      font-weight: 700;
+    }
+
+    &_citation {
+      text-align: center;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  }
+}

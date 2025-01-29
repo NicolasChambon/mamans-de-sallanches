@@ -5,10 +5,10 @@ import styles from './Presentation.module.scss';
 
 const Presentation = () => {
   return (
-    <div className={styles.Presentation}>
+    <section className={styles.Presentation}>
       <PresentationTop />
       <PresentationBottom />
-    </div>
+    </section>
   );
 };
 

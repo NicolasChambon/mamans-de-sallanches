@@ -20,6 +20,7 @@ const PresentationBottom = () => {
           className={styles.PresentationBottom_img}
           src={presentationPicture2}
           alt="Dessin de mains de toutes les couleurs qui s'unissent"
+          width={300}
         />
       </div>
     </div>
