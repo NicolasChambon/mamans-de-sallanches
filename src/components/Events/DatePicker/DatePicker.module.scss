@@ -2,11 +2,13 @@
 
 .DatePicker {
   align-items: center;
+  border-bottom: 2px solid $secondaryColorLight3;
+  color: $secondaryColor;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 
   &_period {
-    color: $secondaryColor;
     margin-bottom: 2rem;
   }
 
@@ -38,15 +40,34 @@
     &_week {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1rem;
 
       &_header,
       &_days {
         display: flex;
-        gap: 2rem;
+        gap: 5rem;
+        justify-content: space-around;
+      }
 
-        & > * {
-          width: 2rem;
+      &_header {
+        text-transform: uppercase;
+      }
+
+      &_days {
+        &_item {
+          background-color: transparent;
+          border: $secondaryColorLight3 1px solid;
+          border-radius: 5px;
+          color: $secondaryColor;
+          font-size: 1rem;
+          height: 2.5rem;
+          width: 2.5rem;
+
+          transition: all 0.3s;
+          &:hover {
+            background-color: $secondaryColorLight3;
+            color: $secondaryColorDark1;
+          }
         }
       }
     }
