@@ -68,6 +68,12 @@
             background-color: $secondaryColorLight3;
             color: $secondaryColorDark1;
           }
+
+          &.active {
+            background-color: $secondaryColor;
+            border: $secondaryColorDark1 1px solid;
+            color: $secondaryColorBackground;
+          }
         }
       }
     }

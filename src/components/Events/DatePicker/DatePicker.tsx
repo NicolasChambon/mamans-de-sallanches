@@ -1,57 +1,101 @@
 'use client';
 
+import { useState } from 'react';
+import { format, startOfWeek, subWeeks, addWeeks, addDays } from 'date-fns';
+import { fr } from 'date-fns/locale';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
 
 import styles from './DatePicker.module.scss';
 
 const DatePicker = () => {
+  const daysHeaders = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.', 'Dim.'];
+  const currentWeekFirstDay = startOfWeek(new Date(), { weekStartsOn: 1 });
+
+  const currentWeekDays = daysHeaders.map((header, index) => ({
+    header: header,
+    number: format(addDays(currentWeekFirstDay, index), 'd', { locale: fr }),
+    date: addDays(currentWeekFirstDay, index)
+  }));
+
+  // To handle display of the required week
+  const [selectedWeek, setSelectedWeek] = useState(currentWeekDays);
+  // To handle display of the selected day and store its information
+  const [selectedDay, setSelectedDay] = useState(currentWeekDays[0].date);
+
+  // Handle week change
+  const handleWeekChange = (direction: 'next' | 'previous') => {
+    let selectedWeekFirstDay: Date | undefined = undefined;
+
+    selectedWeekFirstDay =
+      direction === 'previous'
+        ? subWeeks(selectedWeek[0].date, 1)
+        : addWeeks(selectedWeek[0].date, 1);
+
+    setSelectedWeek(
+      daysHeaders.map((header, index) => ({
+        header: header,
+        number: format(addDays(selectedWeekFirstDay, index), 'd', {
+          locale: fr
+        }),
+        date: addDays(selectedWeekFirstDay, index)
+      }))
+    );
+  };
+
   return (
     <div className={styles.DatePicker}>
-      <p className={styles.DatePicker_period}>1 septembre - 7 septembre</p>
+      <p className={styles.DatePicker_period}>
+        {`${format(selectedWeek[0].date, 'd MMMM', {
+          locale: fr
+        })}
+        -
+        ${format(selectedWeek[6].date, 'd MMMM', {
+          locale: fr
+        })}`}
+      </p>
 
       <div className={styles.DatePicker_table}>
-        <button className={styles.DatePicker_table_btn}>
+        <button
+          className={styles.DatePicker_table_btn}
+          onClick={() => handleWeekChange('previous')}
+        >
           <IoIosArrowBack />
         </button>
 
         <div className={styles.DatePicker_table_week}>
           <div className={styles.DatePicker_table_week_header}>
-            <p className={styles.DatePicker_table_week_header_item}>Lun.</p>
-            <p className={styles.DatePicker_table_week_header_item}>Mar.</p>
-            <p className={styles.DatePicker_table_week_header_item}>Mer.</p>
-            <p className={styles.DatePicker_table_week_header_item}>Jeu.</p>
-            <p className={styles.DatePicker_table_week_header_item}>Ven.</p>
-            <p className={styles.DatePicker_table_week_header_item}>Sam.</p>
-            <p className={styles.DatePicker_table_week_header_item}>Dim.</p>
+            {selectedWeek.map((day) => (
+              <p
+                className={styles.DatePicker_table_week_header_item}
+                key={day.header}
+              >
+                {day.header}
+              </p>
+            ))}
           </div>
 
           <div className={styles.DatePicker_table_week_days}>
-            <button className={styles.DatePicker_table_week_days_item}>
-              1
-            </button>
-            <button className={styles.DatePicker_table_week_days_item}>
-              2
-            </button>
-            <button className={styles.DatePicker_table_week_days_item}>
-              3
-            </button>
-            <button className={styles.DatePicker_table_week_days_item}>
-              4
-            </button>
-            <button className={styles.DatePicker_table_week_days_item}>
-              5
-            </button>
-            <button className={styles.DatePicker_table_week_days_item}>
-              6
-            </button>
-            <button className={styles.DatePicker_table_week_days_item}>
-              7
-            </button>
+            {selectedWeek.map((day) => (
+              <button
+                className={`${styles.DatePicker_table_week_days_item} ${
+                  day.date === selectedDay ? styles.active : ''
+                }`}
+                key={day.number}
+                onClick={() => {
+                  setSelectedDay(day.date);
+                }}
+              >
+                {day.number}
+              </button>
+            ))}
           </div>
         </div>
 
-        <button className={styles.DatePicker_table_btn}>
+        <button
+          className={styles.DatePicker_table_btn}
+          onClick={() => handleWeekChange('next')}
+        >
           <IoIosArrowForward />
         </button>
       </div>
