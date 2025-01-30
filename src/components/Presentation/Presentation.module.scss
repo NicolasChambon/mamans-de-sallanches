@@ -8,9 +8,7 @@
   min-height: calc(100vh - 4rem);
   justify-content: space-around;
   margin: auto;
-  margin-bottom: 2rem; // TODO supprimer
   max-width: 1350px;
-  overflow: hidden;
   padding: 2rem;
 
   @media (max-width: 665px) {

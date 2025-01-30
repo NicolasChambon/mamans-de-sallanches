@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+.DatePicker {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &_period {
+    color: $secondaryColor;
+    margin-bottom: 2rem;
+  }
+
+  &_table {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+
+    &_btn {
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      border-radius: 50%;
+      color: $secondaryColorLight3;
+      display: flex;
+      font-size: 2rem;
+      height: 2.5rem;
+      justify-content: center;
+      padding: 0;
+      width: 2.5rem;
+
+      transition: all 0.3s;
+      &:hover {
+        background-color: $secondaryColorLight3;
+        color: $secondaryColorDark1;
+      }
+    }
+
+    &_week {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &_header,
+      &_days {
+        display: flex;
+        gap: 2rem;
+
+        & > * {
+          width: 2rem;
+        }
+      }
+    }
+  }
+}
