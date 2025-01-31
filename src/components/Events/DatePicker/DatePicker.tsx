@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { resetTime } from '@/utils/resetTime';
 import { format, startOfWeek, subWeeks, addWeeks, addDays } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { IoIosArrowBack } from 'react-icons/io';
@@ -21,7 +22,7 @@ const DatePicker = () => {
   // To handle display of the required week
   const [selectedWeek, setSelectedWeek] = useState(currentWeekDays);
   // To handle display of the selected day and store its information
-  const [selectedDay, setSelectedDay] = useState(currentWeekDays[0].date);
+  const [selectedDay, setSelectedDay] = useState(resetTime(new Date()));
 
   // Handle week change
   const handleWeekChange = (direction: 'next' | 'previous') => {
@@ -32,15 +33,15 @@ const DatePicker = () => {
         ? subWeeks(selectedWeek[0].date, 1)
         : addWeeks(selectedWeek[0].date, 1);
 
-    setSelectedWeek(
-      daysHeaders.map((header, index) => ({
-        header: header,
-        number: format(addDays(selectedWeekFirstDay, index), 'd', {
-          locale: fr
-        }),
-        date: addDays(selectedWeekFirstDay, index)
-      }))
-    );
+    const newWeekDays = daysHeaders.map((header, index) => ({
+      header: header,
+      number: format(addDays(selectedWeekFirstDay, index), 'd', {
+        locale: fr
+      }),
+      date: addDays(selectedWeekFirstDay, index)
+    }));
+
+    setSelectedWeek(newWeekDays);
   };
 
   return (
@@ -79,7 +80,9 @@ const DatePicker = () => {
             {selectedWeek.map((day) => (
               <button
                 className={`${styles.DatePicker_table_week_days_item} ${
-                  day.date === selectedDay ? styles.active : ''
+                  day.date.getTime() === selectedDay.getTime()
+                    ? styles.active
+                    : ''
                 }`}
                 key={day.number}
                 onClick={() => {

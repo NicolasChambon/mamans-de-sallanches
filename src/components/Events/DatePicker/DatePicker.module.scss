@@ -8,6 +8,10 @@
   flex-direction: column;
   padding: 1rem;
 
+  @media (max-width: 405px) {
+    padding: 0.5rem 0rem;
+  }
+
   &_period {
     margin-bottom: 2rem;
   }
@@ -16,6 +20,19 @@
     align-items: center;
     display: flex;
     gap: 2rem;
+
+    @media (max-width: 765px) {
+      gap: 1rem;
+    }
+    @media (max-width: 635px) {
+      gap: 0.5rem;
+    }
+    @media (max-width: 480px) {
+      gap: 0.1rem;
+    }
+    @media (max-width: 375px) {
+      gap: 0rem;
+    }
 
     &_btn {
       align-items: center;
@@ -35,6 +52,12 @@
         background-color: $secondaryColorLight3;
         color: $secondaryColorDark1;
       }
+
+      @media (max-width: 480px) {
+        font-size: 1.5rem;
+        height: 2rem;
+        width: 2rem;
+      }
     }
 
     &_week {
@@ -47,10 +70,33 @@
         display: flex;
         gap: 5rem;
         justify-content: space-around;
+
+        @media (max-width: 955px) {
+          gap: 4rem;
+        }
+        @media (max-width: 860px) {
+          gap: 3rem;
+        }
+        @media (max-width: 765px) {
+          gap: 2rem;
+        }
+        @media (max-width: 635px) {
+          gap: 1rem;
+        }
+        @media (max-width: 480px) {
+          gap: 0.5rem;
+        }
+        @media (max-width: 375px) {
+          gap: 0.25rem;
+        }
       }
 
       &_header {
         text-transform: uppercase;
+
+        @media (max-width: 375px) {
+          font-size: 0.8rem;
+        }
       }
 
       &_days {
@@ -61,6 +107,7 @@
           color: $secondaryColor;
           font-size: 1rem;
           height: 2.5rem;
+          padding: 0;
           width: 2.5rem;
 
           transition: all 0.3s;
@@ -73,6 +120,18 @@
             background-color: $secondaryColor;
             border: $secondaryColorDark1 1px solid;
             color: $secondaryColorBackground;
+          }
+
+          @media (max-width: 525px) {
+            font-size: 0.8rem;
+            height: 1.75rem;
+            width: 1.75rem;
+          }
+
+          @media (max-width: 375px) {
+            font-size: 0.7rem;
+            height: 1.5rem;
+            width: 1.5rem;
           }
         }
       }
