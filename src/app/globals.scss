@@ -11,8 +11,17 @@ body {
   }
 
   h1 {
+    font-family: $titleFont;
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
+    line-height: 2ch;
+  }
+
+  h2 {
+    font-family: $titleFont;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 2ch;
   }
 
   button {

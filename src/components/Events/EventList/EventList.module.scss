@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+.EventList {
+  &_title {
+    border-bottom: 1px solid $secondaryColorLight3;
+    color: $secondaryColor;
+    padding-bottom: 1rem;
+  }
+}

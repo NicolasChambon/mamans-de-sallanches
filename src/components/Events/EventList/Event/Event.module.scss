@@ -1,0 +1,107 @@
+@use 'variables' as *;
+
+.Event {
+  align-items: center;
+  border-bottom: 1px solid $secondaryColorLight3;
+  display: flex;
+  gap: 4.5rem;
+  padding: 1.5rem;
+  text-align: left;
+
+  @media (max-width: 920px) {
+    gap: 2rem;
+  }
+  @media (max-width: 800px) {
+    gap: 0.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+  @media (max-width: 700px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &_time {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 5rem;
+
+    @media (max-width: 700px) {
+      flex-direction: row;
+      margin-bottom: 0.5rem;
+    }
+
+    &_start {
+      color: $secondaryColorDark1;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    &_duration {
+      color: $secondaryColor;
+    }
+  }
+
+  &_titleLeader {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 15rem;
+
+    @media (max-width: 700px) {
+      gap: 0.5rem;
+    }
+
+    &_title {
+      color: $secondaryColorDark1;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    &_leader {
+      color: $secondaryColor;
+    }
+  }
+
+  &_typeAvailability {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 14rem;
+
+    @media (max-width: 700px) {
+      gap: 0.5rem;
+    }
+
+    &_type {
+      border: 1px solid $secondaryColorLight3;
+      border-radius: 3px;
+      color: $secondaryColor;
+      font-weight: 400;
+      padding: 0.1rem 0.3rem;
+      width: fit-content;
+      @media (max-width: 700px) {
+        margin: 0 auto;
+      }
+    }
+
+    &_availability {
+      color: $secondaryColor;
+    }
+  }
+
+  &_link {
+    background-color: $secondaryColorLight1;
+    border: 1px solid $secondaryColor;
+    border-radius: 5px;
+    color: $secondaryColorBackground;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+
+    transition: all 0.3s;
+    &:hover {
+      background-color: $secondaryColorDark1;
+      border: 1px solid $secondaryColorDark1;
+    }
+  }
+}

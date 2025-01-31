@@ -1,4 +1,5 @@
 import DatePicker from './DatePicker/DatePicker';
+import EventList from './EventList/EventList';
 
 import styles from './Events.module.scss';
 
@@ -7,6 +8,7 @@ const Events = () => {
     <section className={styles.Events}>
       <h1 className={styles.Events_title}>Événements</h1>
       <DatePicker />
+      <EventList />
     </section>
   );
 };
