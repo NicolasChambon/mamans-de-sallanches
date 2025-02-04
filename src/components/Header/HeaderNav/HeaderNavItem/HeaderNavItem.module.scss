@@ -25,4 +25,24 @@
       background-color: $secondaryColor;
     }
   }
+
+  & ul {
+    display: none;
+
+    &:hover {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: absolute;
+      top: 4rem;
+    }
+  }
+
+  &:hover ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 4rem;
+  }
 }

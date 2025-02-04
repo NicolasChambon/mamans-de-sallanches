@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import styles from './HeaderNavItem.module.scss';
+import ActivitiesItemClient from './ActivitiesItemClient/ActivitiesItemClient';
 
 const HeaderNavItem = ({
   href,
@@ -14,6 +15,7 @@ const HeaderNavItem = ({
       <Link href={href} className={styles.HeaderNavItem_link}>
         {content}
       </Link>
+      {content === 'Activités' && <ActivitiesItemClient />}
     </li>
   );
 };

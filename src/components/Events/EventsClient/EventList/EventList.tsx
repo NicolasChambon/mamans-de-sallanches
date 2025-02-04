@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { SelectedDayContext } from '@/contexts/SelectedDayContext';
 import { format } from 'date-fns';
-import fr from 'date-fns/locale/fr';
+import { fr } from 'date-fns/locale/fr';
 
 import Event from './Event/Event';
 
@@ -28,7 +28,7 @@ const EventList = () => {
         <Event
           timeStart="11:00"
           duration="1h30"
-          title="Atelier aptonomie"
+          title="Atelier haptonomie"
           leader="Gertrude"
           type="Atelier"
           numberOfParticipants="6"
