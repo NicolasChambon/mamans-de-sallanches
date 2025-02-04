@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { resetTime } from '@/utils/resetTime';
+import { useContext, useState } from 'react';
+import { SelectedDayContext } from '@/contexts/SelectedDayContext';
 import { format, startOfWeek, subWeeks, addWeeks, addDays } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { IoIosArrowBack } from 'react-icons/io';
@@ -22,7 +22,7 @@ const DatePicker = () => {
   // To handle display of the required week
   const [selectedWeek, setSelectedWeek] = useState(currentWeekDays);
   // To handle display of the selected day and store its information
-  const [selectedDay, setSelectedDay] = useState(resetTime(new Date()));
+  const { selectedDay, setSelectedDay } = useContext(SelectedDayContext)!;
 
   // Handle week change
   const handleWeekChange = (direction: 'next' | 'previous') => {

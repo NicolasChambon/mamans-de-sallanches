@@ -1,11 +1,19 @@
+import { useContext } from 'react';
+import { SelectedDayContext } from '@/contexts/SelectedDayContext';
+import { format } from 'date-fns';
+import fr from 'date-fns/locale/fr';
+
 import Event from './Event/Event';
 
 import styles from './EventList.module.scss';
 
 const EventList = () => {
+  const { selectedDay } = useContext(SelectedDayContext)!;
+  const formattedDate = format(selectedDay, 'cccc d MMMM yyyy', { locale: fr });
+
   return (
     <div className={styles.EventList}>
-      <h2 className={styles.EventList_title}>Activités du mardi 11 février</h2>
+      <h2 className={styles.EventList_title}>Activités du {formattedDate}</h2>
       <ul className={styles.EventList_list}>
         <Event
           timeStart="10:00"

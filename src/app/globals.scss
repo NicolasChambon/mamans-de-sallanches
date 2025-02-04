@@ -2,6 +2,7 @@
 @use 'variables' as *;
 
 body {
+  background-color: $thirdColorBackground;
   font-family: $mainFont;
   font-size: 0.9rem;
   line-height: 2ch;
